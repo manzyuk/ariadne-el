@@ -136,3 +136,5 @@ messages."
        (vector 'call 'ariadne 'find
                (list file-name line-number column-number))
        ariadne-process))))
+
+(provide 'ariadne)
