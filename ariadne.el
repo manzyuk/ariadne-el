@@ -10,8 +10,8 @@
           :host     "localhost"
           :service  39014
           :buffer   "*ariadne*"
-          :filter   #'ariadne-filter
-          :sentinel #'ariadne-sentinel)))
+          :filter   'ariadne-filter
+          :sentinel 'ariadne-sentinel)))
     (with-current-buffer (process-buffer process)
       (set-buffer-multibyte nil))
     (set-process-query-on-exit-flag process nil)
