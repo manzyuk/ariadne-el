@@ -6,20 +6,23 @@
 
 (defun ariadne-connect ()
   "Connect to the Ariadne server."
-  (let ((process
-         (make-network-process
-          :name     "ariadne"
-          :host     "localhost"
-          :service  39014
-          :buffer   "*ariadne*"
-          :filter   'ariadne-filter
-          :sentinel 'ariadne-sentinel)))
-    (with-current-buffer (process-buffer process)
-      (set-buffer-multibyte nil))
-    ;; Delete the process without querying if the process buffer is
-    ;; killed.
-    (set-process-query-on-exit-flag process nil)
-    (setq ariadne-process process)))
+  (condition-case error
+      (let ((process
+             (make-network-process
+              :name     "ariadne"
+              :host     "localhost"
+              :service  39014
+              :buffer   "*ariadne*"
+              :filter   'ariadne-filter
+              :sentinel 'ariadne-sentinel)))
+        (with-current-buffer (process-buffer process)
+          (set-buffer-multibyte nil))
+        ;; Delete the process without querying if the process buffer is
+        ;; killed.
+        (set-process-query-on-exit-flag process nil)
+        (setq ariadne-process process))
+    (error
+     (message "Failed to connect to Ariadne.  Is ariadne-server running?"))))
 
 (defun ariadne-close (process)
   (setq ariadne-process nil)
@@ -135,11 +138,14 @@ messages."
         (line-number (ariadne-current-line))
         (column-number (current-column)))
     (when file-name
+      ;; Connect to Ariadne if not already connected.
       (unless ariadne-process (ariadne-connect))
-      (push-mark (point))
-      (ariadne-send
-       (vector 'call 'ariadne 'find
-               (list file-name line-number column-number))
-       ariadne-process))))
+      ;; Proceed only if connection was succesful.
+      (when ariadne-process
+        (push-mark (point))
+        (ariadne-send
+         (vector 'call 'ariadne 'find
+                 (list file-name line-number column-number))
+         ariadne-process)))))
 
 (provide 'ariadne)
