@@ -201,3 +201,5 @@ messages."
          ariadne-process)))))
 
 (provide 'ariadne)
+
+;;; ariadne.el ends here
