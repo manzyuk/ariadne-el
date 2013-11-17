@@ -150,8 +150,7 @@ messages."
 
 (defun ariadne-handle-reply (reply)
   (case (aref reply 0)
-    (no_name
-     (message "No recognized name at point."))
+    (no_name)
     (loc_known
      (ariadne-goto (aref reply 1) (aref reply 2) (aref reply 3)))
     (loc_unknown
