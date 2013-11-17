@@ -3,12 +3,12 @@
 [Ariadne](https://github.com/feuerbach/ariadne) provides a
 "go-to-definition" functionality for Haskell.
 
-`ariadne.el` is an Ariadne plugin for Emacs.
+ariadne-el is an Ariadne plugin for Emacs.
 
 ## Dependencies
 
-`ariadne.el` depends on `bert.el`, BERT serialization library for
-Emacs, which can be found at https://github.com/manzyuk/bert-el.
+ariadne-el depends on [bert-el](https://github.com/manzyuk/bert-el),
+BERT serialization library for Emacs.
 
 ## Usage
 
