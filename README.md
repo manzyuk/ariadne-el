@@ -14,7 +14,8 @@ BERT serialization library for Emacs.
 
 The function `ariadne-goto-definition` queries the Ariadne server
 about the location of the definition of a name at point and jumps to
-that location.  Bind it to a key, for example as follows:
+that location.  Bind `ariadne-goto-definition` to a key, for example
+as follows:
 
     (require 'ariadne)
     (add-hook 'haskell-mode-hook

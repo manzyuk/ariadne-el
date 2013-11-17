@@ -24,11 +24,10 @@
 
 ;;; Commentary:
 
-;; Ariadne provides a "go-to-definition" functionality for Haskell.
-;; See https://github.com/feuerbach/ariadne for more information on
-;; Ariadne.
+;; Ariadne (https://github.com/feuerbach/ariadne) provides a
+;; "go-to-definition" functionality for Haskell.
 
-;; ariadne.el is an Ariadne plugin for Emacs.
+;; `ariadne.el' is an Ariadne plugin for Emacs.
 
 ;; Dependencies:
 
@@ -38,9 +37,10 @@
 
 ;; Usage:
 
-;; The function `ariadne-goto-definition` queries the Ariadne server
-;; about the location of the definition of a name at point and jumps to
-;; that location.  Bind it to a key, for example as follows:
+;; The function `ariadne-goto-definition' queries the Ariadne server
+;; about the location of the definition of a name at point and jumps
+;; to that location.  Bind `ariadne-goto-definition' to a key, for
+;; example as follows:
 ;;
 ;;     (require 'ariadne)
 ;;     (add-hook 'haskell-mode-hook
