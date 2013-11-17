@@ -92,7 +92,7 @@ messages."
     ;; -- {reply, Result}
     (reply (ariadne-handle-reply (aref event 1)))
     ;; -- {error, {Type, Code, Class, Detail, Backtrace}}
-    (error (error "BERT-RPC error: %s" (aref (aref event 1) 3)))))
+    (error (message "BERT-RPC error: %s" (aref (aref event 1) 3)))))
 
 (defun ariadne-handle-reply (reply)
   (case (aref reply 0)
