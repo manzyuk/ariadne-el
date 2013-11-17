@@ -1,3 +1,53 @@
+;;; ariadne.el --- Ariadne plugin for Emacs
+
+;; Copyright (C) 2013 Oleksandr Manzyuk <manzyuk@gmail.com>
+
+;; Author: Oleksandr Manzyuk <manzyuk@gmail.com>
+;; Version: 0.1
+;; Keywords: comm convenience processes
+;; Package-Requires: ((bert "0.1"))
+
+;; This file is NOT part of GNU Emacs.
+
+;; This is free software; you can redistribute it and/or modify it
+;; under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 2, or (at your option)
+;; any later version.
+
+;; This file is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+;; General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; Ariadne is a tool that provides a "go-to-definition" functionality
+;; for Haskell source files.  See https://github.com/feuerbach/ariadne
+;; for more information on Ariadne.
+
+;; ariadne.el is an Ariadne plugin for Emacs.
+
+;; Dependencies:
+
+;; `ariadne.el' depends on `bert.el', BERT serialization library for
+;; Emacs, which can be found at https://github.com/manzyuk/bert-el.
+
+;; Usage:
+
+;; The key function is `ariadne-goto-definition', which queries the
+;; Ariadne server about the location of the definition of a name at
+;; point and jumps to that location.  You may wish to bind
+;; `ariadne-goto-definition' to a key, e.g.
+;;
+;; (add-hook 'haskell-mode-hook
+;;           (lambda ()
+;;             (define-key haskell-mode-map "\C-cd" 'ariadne-goto-definition)))
+
+;;; Code:
+
 (require 'bert)
 (require 'bindat)
 
