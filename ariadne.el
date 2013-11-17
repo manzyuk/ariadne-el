@@ -37,14 +37,14 @@
 
 ;; Usage:
 
-;; The key function is `ariadne-goto-definition', which queries the
-;; Ariadne server about the location of the definition of a name at
-;; point and jumps to that location.  You may wish to bind
-;; `ariadne-goto-definition' to a key, e.g.
+;; The function `ariadne-goto-definition` queries the Ariadne server
+;; about the location of the definition of a name at point and jumps to
+;; that location.  Bind it to a key, for example as follows:
 ;;
-;; (add-hook 'haskell-mode-hook
-;;           (lambda ()
-;;             (define-key haskell-mode-map "\C-cd" 'ariadne-goto-definition)))
+;;     (require 'ariadne)
+;;     (add-hook 'haskell-mode-hook
+;;               (lambda ()
+;;                 (define-key haskell-mode-map "\C-cd" 'ariadne-goto-definition)))
 
 ;;; Code:
 
