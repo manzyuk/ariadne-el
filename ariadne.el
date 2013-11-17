@@ -89,7 +89,9 @@ messages."
 
 (defun ariadne-dispatch-event (event process)
   (case (aref event 0)
+    ;; -- {reply, Result}
     (reply (ariadne-handle-reply (aref event 1)))
+    ;; -- {error, {Type, Code, Class, Detail, Backtrace}}
     (error (error "BERT-RPC error: %s" (aref (aref event 1) 3)))))
 
 (defun ariadne-handle-reply (reply)
