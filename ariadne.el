@@ -24,9 +24,9 @@
 
 ;;; Commentary:
 
-;; Ariadne is a tool that provides a "go-to-definition" functionality
-;; for Haskell source files.  See https://github.com/feuerbach/ariadne
-;; for more information on Ariadne.
+;; Ariadne provides a "go-to-definition" functionality for Haskell.
+;; See https://github.com/feuerbach/ariadne for more information on
+;; Ariadne.
 
 ;; ariadne.el is an Ariadne plugin for Emacs.
 

@@ -1,7 +1,7 @@
 # Ariadne plugin for Emacs
 
-[Ariadne](https://github.com/feuerbach/ariadne) is a tool that
-provides a "go-to-definition" functionality for Haskell source files.
+[Ariadne](https://github.com/feuerbach/ariadne) provides a
+"go-to-definition" functionality for Haskell.
 
 `ariadne.el` is an Ariadne plugin for Emacs.
 
