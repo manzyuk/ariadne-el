@@ -181,6 +181,7 @@ messages."
     (widen)
     (line-number-at-pos)))
 
+;;;###autoload
 (defun ariadne-goto-definition ()
   "Go to the definition of a name at point."
   (interactive)
