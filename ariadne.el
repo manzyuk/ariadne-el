@@ -106,6 +106,9 @@ messages."
 (defun ariadne-goto (filename line column)
   "Go to a given position in a given file."
   (find-file filename)
+  ;; Remove any narrowing because `line' is an absolute line number in
+  ;; a file (counted relative to the beginning of the file, not to the
+  ;; beginning of the accessible portion of the buffer).
   (widen)
   (goto-char (point-min))
   (forward-line (1- line))
