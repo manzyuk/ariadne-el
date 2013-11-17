@@ -193,7 +193,7 @@ messages."
       (unless ariadne-process (ariadne-connect))
       ;; Proceed only if connection was succesful.
       (when ariadne-process
-        (push-mark (point))
+        (push-mark (point) t)
         (ariadne-send
          (vector 'call 'ariadne 'find
                  (list file-name line-number column-number))
